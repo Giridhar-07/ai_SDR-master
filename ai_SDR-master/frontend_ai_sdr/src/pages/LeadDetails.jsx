@@ -215,6 +215,10 @@ const LeadDetails = () => {
                                             setMeetingDate(date ? date.toISOString() : null)
                                         }
                                         showTime
+                                        disabledDate={(current) => {
+                                            // Disable dates before today
+                                            return current && current < dayjs().startOf('day');
+                                        }}
                                     />
                                 </Form.Item>
                                 <Button type="primary" htmlType="submit" loading={btnLoading}>

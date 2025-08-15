@@ -11,7 +11,6 @@ import {
 import "@xyflow/react/dist/style.css";
 import SideNavDash from "../components/SideNavDash";
 
-// npm install @xyflow/react
 
 const initialNodes = [
   { id: "1", type: "input", position: { x: 250, y: 0 }, data: { label: "Trigger: Add CSV File" } },

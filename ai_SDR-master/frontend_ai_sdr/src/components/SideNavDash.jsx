@@ -14,6 +14,7 @@ import {
     DashboardOutlined,
     MenuFoldOutlined,
     MenuUnfoldOutlined,
+    NodeIndexOutlined,
 } from '@ant-design/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axiosInstance from '../api/axiosInstance';
@@ -77,6 +78,7 @@ const SideNavDash = () => {
         { key: '/lead/add', label: 'Add Lead', icon: <PlusOutlined /> },
         { key: '/lead/search', label: 'Search Lead', icon: <SearchOutlined /> },
         { key: '/lead/meeting/all', label: 'All Meetings', icon: <ContactsOutlined />, badge: meetingCount > 0 ? meetingCount : null },
+        { key: '/edit/workflow', label: 'Edit Workflow', icon: <NodeIndexOutlined />, badge: meetingCount > 0 ? meetingCount : null },
     ];
 
     if (loading) return <Loader />;

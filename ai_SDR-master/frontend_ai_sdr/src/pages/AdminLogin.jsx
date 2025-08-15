@@ -24,7 +24,7 @@ const AdminLogin = () => {
       setLoading(true);
       setServerError("");
       await axiosInstance.post('/admin/login', values);
-      message.success('Login successful! Redirecting...');
+      message.success('Login successful');
       setTimeout(() => {
         navigate('/admin/dashboard');
       }, 1000);
@@ -144,7 +144,7 @@ const AdminLogin = () => {
         {/* Footer */}
         <div className="text-center mt-8 pt-6 border-t border-gray-100">
           <Text className="text-gray-500">
-            AI SDR Admin Portal
+           SaarathiLead
           </Text>
         </div>
       </div>

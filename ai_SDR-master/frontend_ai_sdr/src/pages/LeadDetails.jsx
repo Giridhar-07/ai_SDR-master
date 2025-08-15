@@ -185,6 +185,21 @@ const LeadDetails = () => {
                         <div className="mt-10">
                             <h3 className="text-lg font-semibold mb-4">Add Meeting Details</h3>
                             <Form layout="vertical" onFinish={handleUpdateMeetingLinkAndDate}>
+                                <Button
+                                    type="default"
+                                    style={{ marginBottom: "1rem" }}
+                                    onClick={() => {
+                                        if (!lead?._id) {
+                                            message.error("Lead ID is missing!");
+                                            return;
+                                        }
+                                        const link = `https://meet.jit.si/${lead._id}-${Date.now()}`;
+                                        setMeetingLink(link);
+                                        message.success("Jitsi meeting link generated!");
+                                    }}
+                                >
+                                    Generate Jitsi Link
+                                </Button>
                                 <Form.Item label="Meeting Link" required>
                                     <Input
                                         placeholder="Enter meeting link"

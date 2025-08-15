@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8080/api', // change to your backend URL
+  baseURL: 'https://ai-sdr-master.onrender.com/api', // change to your backend URL
   withCredentials: true // if using cookies
 });
 

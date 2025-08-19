@@ -6,7 +6,7 @@ export const mailer = async ({ to, subject, text }) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.SMTP_USER, 
+                user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS
             }
         });
@@ -15,7 +15,7 @@ export const mailer = async ({ to, subject, text }) => {
             from: `${APPLICATION_NAME}<${process.env.SMTP_USER}>`,
             to,
             subject,
-            text,
+            html: text,
         });
     } catch (error) {
         console.error("❌ Email sending failed:", error.message);
@@ -29,7 +29,7 @@ export const sendMeetingInvitationEmail = async ({ to, meeting, lead }) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.SMTP_USER, 
+                user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS
             }
         });
@@ -46,7 +46,7 @@ export const sendMeetingInvitationEmail = async ({ to, meeting, lead }) => {
         const jitsiLink = `https://meet.jit.si/${meeting.jitsiRoomId}`;
 
         const subject = `Meeting Invitation: ${meeting.title}`;
-        
+
         const htmlContent = `
             <!DOCTYPE html>
             <html>
